@@ -13,7 +13,8 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('/websocket-example');
+    var socket = new SockJS('/websocket/ws/websocket-example'); // gateway
+    // var socket = new SockJS('/ws/websocket-example'); // local
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);

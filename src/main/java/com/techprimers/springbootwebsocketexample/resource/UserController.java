@@ -6,6 +6,8 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
+import java.util.Date;
+
 @Controller
 public class UserController {
 
@@ -14,6 +16,6 @@ public class UserController {
     @SendTo("/topic/user")
     public UserResponse getUser(User user) {
 
-        return new UserResponse("Hi " + user.getName());
+        return new UserResponse("Hi " + user.getName(), new Date());
     }
 }

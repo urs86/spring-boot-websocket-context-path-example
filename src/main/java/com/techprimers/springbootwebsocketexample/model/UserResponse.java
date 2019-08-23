@@ -1,5 +1,7 @@
 package com.techprimers.springbootwebsocketexample.model;
 
+import java.util.Date;
+
 public class UserResponse {
     String content;
 
@@ -10,7 +12,7 @@ public class UserResponse {
         return content;
     }
 
-    public UserResponse(String content) {
-        this.content = content;
+    public UserResponse(String content, Date date) {
+        this.content = content + " " + date;
     }
 }
